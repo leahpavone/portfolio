@@ -10,7 +10,6 @@ const Footer = () => {
           borderTop: '1px solid white'
         }}
       />
-      <Typography>Footer</Typography>
     </Box>
   );
 };
