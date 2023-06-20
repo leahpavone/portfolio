@@ -24,7 +24,7 @@ function App() {
   };
 
   const scrollFromMain = () => {
-    scroll.scrollTo(mobile ? 890 : 1000);
+    scroll.scrollTo(mobile ? 890 : 980);
   };
 
   useEffect(() => {
