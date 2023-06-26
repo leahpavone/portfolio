@@ -16,6 +16,8 @@ const Footer = () => {
       <Box
         sx={{
           flex: 1
+          // minHeight: '100%'
+          // pb: 2
         }}>
         <Divider
           variant='fullWidth'

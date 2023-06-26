@@ -99,29 +99,34 @@ const Contact = () => {
       sx={{
         p: {
           xs: '0px',
-          sm: '20px 0px 0px 0px',
+          sm: '40px 0px 0px 0px',
           md: '60px 40px 10px 20px'
         },
-        minHeight: { xs: '100%', sm: windowSize.height },
+        height: { xs: '100%', sm: windowSize.height },
         display: smallerScreen && 'flex',
-        flexDirection: smallerScreen && 'column'
+        flexDirection: smallerScreen && 'column',
+        justifyContent: smallerScreen && 'space-between'
+        // flex: 1
+        // justifyContent: smallerScreen && 'flex-end'
       }}>
       <Typography
         sx={{
           fontSize: '42px',
           textAlign: 'center',
           color: 'light',
-          pb: 2
+          pb: smallerScreen && 6
         }}>
         Contact
       </Typography>
 
       <Box
         sx={{
-          minHeight: '100%',
+          height: '100%',
           display: 'flex',
-          flexDirection: 'column',
-          gap: 4
+          flexDirection: 'column'
+          // gap: 4,
+          // flex: 1
+          // justifyContent: smallerScreen && 'space-between'
         }}>
         <Box
           sx={{
@@ -133,28 +138,32 @@ const Contact = () => {
             alignItems: 'center',
             justifyContent: { xs: 'flex-start', sm: 'center' },
             gap: { xs: 4, sm: 4 },
-            pt: { xs: 5, sm: 3, md: 5 },
-            overflow: 'hidden'
+            pt: { xs: 5, sm: 0, md: 0 }
+            // overflow: 'hidden'
+            // flex: 1
           }}>
           <Box
             sx={{
               width: { xs: '100%', lg: '50%' },
               display: 'flex',
               flexDirection: 'column',
-              justifyContent: 'center',
+              justifyContent: { xs: 'center', lg: 'space-around' },
               gap: { xs: 3, lg: 0 },
               height: '100%',
-              minHeight: { lg: '280px' }
+              minHeight: { lg: '280px' },
+              maxHeight: { lg: '350px' },
+              pb: { lg: 5 }
+              // flex: 1
             }}>
             <Box
               sx={{
-                height: '100%',
+                // height: '100%',
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: { xs: 'center', lg: '' },
                 justifyContent: { lg: 'center' },
                 gap: 1,
-                flex: 1
+                flex: smallerScreen && 1
               }}>
               <Typography
                 variant='h3'
@@ -396,7 +405,13 @@ const Contact = () => {
         </Box>
 
         {smallerScreen && (
-          <Box sx={{ display: 'flex', flex: 1, alignItems: 'flex-end' }}>
+          <Box
+            sx={{
+              // height: '100%',
+              display: 'flex',
+              flex: 1,
+              alignItems: 'flex-end'
+            }}>
             <Footer />
           </Box>
         )}
