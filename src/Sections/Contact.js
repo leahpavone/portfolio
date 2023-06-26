@@ -14,14 +14,9 @@ import { StyledTextField } from '../Components/StyledTextField';
 import { db } from '../Utilities/firebase';
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import { useState, useRef } from 'react';
-import {
-  Email,
-  EmailOutlined,
-  GitHub,
-  LinkedIn,
-  Place
-} from '@mui/icons-material';
+import { Email, GitHub, LinkedIn, Place } from '@mui/icons-material';
 import emailjs from '@emailjs/browser';
+import Footer from './Footer';
 
 export const contactFormSchema = yup.object().shape({
   name: yup.string().required('Required'),
@@ -31,6 +26,7 @@ export const contactFormSchema = yup.object().shape({
 
 const Contact = () => {
   const mobile = useMediaQuery('(max-width:899px)');
+  const smallerScreen = useMediaQuery('(max-width:1199px)');
   const windowSize = useWindowSize();
   const [loading, setLoading] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -101,11 +97,14 @@ const Contact = () => {
   return (
     <Box
       sx={{
+        p: {
+          xs: '0px',
+          sm: '20px 0px 0px 0px',
+          md: '60px 40px 10px 20px'
+        },
         minHeight: { xs: '100%', sm: windowSize.height },
-        width: '100%',
-        p: { xs: '0px 0px 30px 0px', sm: '20px 0px 30px 0px', md: '60px' },
-        display: 'flex',
-        flexDirection: 'column'
+        display: smallerScreen && 'flex',
+        flexDirection: smallerScreen && 'column'
       }}>
       <Typography
         sx={{
@@ -119,281 +118,288 @@ const Contact = () => {
 
       <Box
         sx={{
-          width: '100%',
-          // height: '100%',
-          minHeight: '450px',
+          minHeight: '100%',
           display: 'flex',
-          flexDirection: { xs: 'column', lg: 'row' },
-          alignItems: 'center',
-          justifyContent: { xs: 'flex-start', sm: 'center' },
-          gap: { xs: 4, sm: 4 },
-          pt: { xs: 5, sm: 3 },
-          flex: { sm: 1 },
-          overflow: 'hidden'
+          flexDirection: 'column',
+          gap: 4
         }}>
         <Box
           sx={{
-            width: { xs: '100%', lg: '50%' },
+            width: '100%',
+            maxHeight: '100%',
+            minHeight: { xs: '450px', lg: '85vh' },
             display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            gap: { xs: 3, lg: 0 },
-            height: '100%',
-            minHeight: { lg: '280px' }
+            flexDirection: { xs: 'column', lg: 'row' },
+            alignItems: 'center',
+            justifyContent: { xs: 'flex-start', sm: 'center' },
+            gap: { xs: 4, sm: 4 },
+            pt: { xs: 5, sm: 3, md: 5 },
+            overflow: 'hidden'
           }}>
           <Box
             sx={{
-              height: '100%',
+              width: { xs: '100%', lg: '50%' },
               display: 'flex',
               flexDirection: 'column',
-              alignItems: { xs: 'center', lg: '' },
-              justifyContent: { lg: 'center' },
-              gap: 1,
-              flex: 1
-            }}>
-            <Typography
-              variant='h3'
-              sx={{
-                // textAlign: 'center',
-                fontSize: { xs: '18px', sm: '20px' }
-              }}>
-              Interested in working with me?
-            </Typography>
-            <Typography
-              variant='h4'
-              sx={{
-                fontSize: { xs: '18px', sm: '20px' }
-              }}>
-              Hit me up!
-            </Typography>
-          </Box>
-
-          <Box
-            sx={{
-              width: { lg: 'max-content' },
-              margin: { lg: '0 auto' },
-              display: 'flex',
-              justifyContent: {
-                xs: 'space-between',
-                sm: 'space-around',
-                lg: 'center'
-              },
-              alignItems: { lg: 'center' },
-              flexDirection: { lg: 'column' },
-              gap: { lg: 3 },
-              flexWrap: 'wrap'
-              // flex: { lg: 1 }
-              // alignItems: 'space-between'
+              justifyContent: 'center',
+              gap: { xs: 3, lg: 0 },
+              height: '100%',
+              minHeight: { lg: '280px' }
             }}>
             <Box
               sx={{
-                minHeight: '100%',
+                height: '100%',
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'flex-start',
-                gap: { lg: 2 }
-                // alignItems: { lg: 'center' },
-                // pt: 1,
+                alignItems: { xs: 'center', lg: '' },
+                justifyContent: { lg: 'center' },
+                gap: 1,
+                flex: 1
               }}>
-              <Box
+              <Typography
+                variant='h3'
                 sx={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  height: '100%'
+                  fontSize: { xs: '18px', sm: '20px' }
                 }}>
-                <span>
-                  {' '}
-                  <Place
-                    sx={{
-                      fill: (theme) => theme.palette.light
-                    }}
-                  />{' '}
-                </span>
-                <Typography
-                  sx={{
-                    ml: 1,
-                    color: (theme) => theme.palette.light,
-                    fontSize: { xs: '14px', sm: '16px' }
-                  }}>
-                  Los Angeles, California
-                </Typography>
-              </Box>
-              <Box
+                Interested in working with me?
+              </Typography>
+              <Typography
+                variant='h4'
                 sx={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  height: '100%'
+                  fontSize: { xs: '18px', sm: '20px' }
                 }}>
-                <span>
-                  {' '}
-                  <Email
-                    sx={{
-                      fill: (theme) => theme.palette.light
-                    }}
-                  />{' '}
-                </span>
-                <Typography
-                  sx={{
-                    ml: 1,
-                    color: (theme) => theme.palette.light,
-                    fontSize: { xs: '14px', sm: '16px' }
-                  }}>
-                  leahpavone@gmail.com
-                </Typography>
-              </Box>
+                Hit me up!
+              </Typography>
             </Box>
 
-            <Stack
-              direction={{ xs: 'column', lg: 'row' }}
-              sx={{
-                display: 'flex',
-                justifyContent: {
-                  xs: 'center',
-                  sm: 'center',
-                  lg: 'center'
-                },
-                // ml: { lg: 3, xl: 0 },
-                alignItems: 'center',
-                gap: { lg: 2 },
-                '&:hover': { boxShadow: 'none' }
-              }}>
-              <IconButton
-                href='https://www.linkedin.com/in/leahpavone/'
-                target='_blank'
+            {!smallerScreen && (
+              <Box
                 sx={{
-                  height: 48,
-                  width: 48,
-                  p: 0,
-                  '&:hover': {
-                    transition: 'all 0.3s ease-in-out',
-                    backgroundColor: 'transparent',
-                    transform: 'translateY(-3px)'
-                  }
-                }}>
-                <LinkedIn fontSize='large' sx={{ color: '#fff6f6' }} />
-              </IconButton>
-              <IconButton
-                href='https://github.com/leahpavone'
-                target='_blank'
-                sx={{
-                  height: 48,
-                  width: 48,
-                  p: 0,
-                  '&:hover': {
-                    transition: 'all 0.3s ease-in-out',
-                    backgroundColor: 'transparent',
-                    transform: 'translateY(-3px)'
-                  }
-                }}>
-                <GitHub fontSize='large' sx={{ color: '#fff6f6' }} />
-              </IconButton>
-            </Stack>
-          </Box>
-        </Box>
-
-        <Box
-          sx={{
-            width: { xs: '100%', lg: '50%' },
-            display: 'flex',
-            alignItems: 'center',
-            minHeight: '100%'
-          }}>
-          <Box
-            component='form'
-            onSubmit={formik.handleSubmit}
-            ref={form}
-            sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: { xs: '', sm: 'center' },
-              gap: 2,
-              maxWidth: '600px',
-              width: '100%',
-              minWidth: { sm: '300px' },
-              m: '0 auto',
-              // flex: 1,
-              minHeight: 'max-content',
-              height: '100%'
-            }}>
-            <StyledTextField
-              formik={formik}
-              type='text'
-              name='name'
-              label='Name'
-              variant='outlined'
-              value={formik.values.name}
-              placeholder='Full Name'
-              error={formik.errors.name && formik.touched.name}
-            />
-            <StyledTextField
-              formik={formik}
-              type='email'
-              name='email'
-              label='Email'
-              variant='outlined'
-              value={formik.values.email}
-              placeholder='Email'
-              error={formik.errors.email && formik.touched.email}
-            />
-            <StyledTextField
-              formik={formik}
-              type='text'
-              name='message'
-              label='Message'
-              variant='outlined'
-              value={formik.values.message}
-              placeholder='Message'
-              error={formik.errors.message && formik.touched.message}
-            />
-
-            <Box
-              sx={{
-                display: 'flex',
-                height: '100%',
-                justifyContent: 'flex-end'
-              }}>
-              <Button
-                onClick={handleClick({
-                  vertical: 'top',
-                  horizontal: 'right'
-                })}
-                disableRipple
-                variant='outlined'
-                type='submit'
-                disabled={formik.isSubmitting}
-                size={mobile ? 'small' : 'large'}
-                sx={{
-                  width: 'max-content',
-                  alignSelf: 'flex-end',
-                  borderColor: 'light',
-                  lineHeight: { xs: '16px', sm: '28px' },
-                  letterSpacing: { xs: 1, sm: 1.2 },
-                  p: 1,
-                  color: 'light',
-                  '&:hover': {
-                    borderColor: (theme) => theme.palette.main,
-                    color: (theme) => theme.palette.main
+                  width: { lg: 'max-content' },
+                  margin: { lg: '0 auto' },
+                  display: 'flex',
+                  justifyContent: {
+                    xs: 'space-between',
+                    sm: 'space-around',
+                    lg: 'center'
                   },
-                  '&:disabled': {
-                    backgroundColor: 'mainDark2',
-                    color: 'mainDark1'
-                  }
+                  alignItems: { lg: 'center' },
+                  flexDirection: { lg: 'column' },
+                  gap: { lg: 3 },
+                  flexWrap: 'wrap'
                 }}>
-                Send Message
-              </Button>
-            </Box>
-            {formSubmitted && (
-              <Snackbar
-                anchorOrigin={{ vertical, horizontal }}
-                open={open}
-                onClose={handleClose}
-                message='Message sent successfully!'
-                key={vertical + horizontal}
-                autoHideDuration={5000}
-              />
+                <Box
+                  sx={{
+                    minHeight: '100%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'flex-start',
+                    gap: { lg: 2 }
+                  }}>
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      height: '100%'
+                    }}>
+                    <span>
+                      {' '}
+                      <Place
+                        sx={{
+                          fill: (theme) => theme.palette.light
+                        }}
+                      />{' '}
+                    </span>
+                    <Typography
+                      sx={{
+                        ml: 1,
+                        color: (theme) => theme.palette.light,
+                        fontSize: { xs: '14px', sm: '16px' }
+                      }}>
+                      Los Angeles, California
+                    </Typography>
+                  </Box>
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      height: '100%'
+                    }}>
+                    <span>
+                      {' '}
+                      <Email
+                        sx={{
+                          fill: (theme) => theme.palette.light
+                        }}
+                      />{' '}
+                    </span>
+                    <Typography
+                      sx={{
+                        ml: 1,
+                        color: (theme) => theme.palette.light,
+                        fontSize: { xs: '14px', sm: '16px' }
+                      }}>
+                      leahpavone@gmail.com
+                    </Typography>
+                  </Box>
+                </Box>
+
+                <Stack
+                  direction={{ xs: 'column', lg: 'row' }}
+                  sx={{
+                    display: 'flex',
+                    justifyContent: {
+                      xs: 'center',
+                      sm: 'center',
+                      lg: 'center'
+                    },
+                    alignItems: 'center',
+                    gap: { lg: 2 },
+                    '&:hover': { boxShadow: 'none' }
+                  }}>
+                  <IconButton
+                    href='https://www.linkedin.com/in/leahpavone/'
+                    target='_blank'
+                    sx={{
+                      height: 48,
+                      width: 48,
+                      p: 0,
+                      '&:hover': {
+                        transition: 'all 0.3s ease-in-out',
+                        backgroundColor: 'transparent',
+                        transform: 'translateY(-3px)'
+                      }
+                    }}>
+                    <LinkedIn fontSize='large' sx={{ color: '#fff6f6' }} />
+                  </IconButton>
+                  <IconButton
+                    href='https://github.com/leahpavone'
+                    target='_blank'
+                    sx={{
+                      height: 48,
+                      width: 48,
+                      p: 0,
+                      '&:hover': {
+                        transition: 'all 0.3s ease-in-out',
+                        backgroundColor: 'transparent',
+                        transform: 'translateY(-3px)'
+                      }
+                    }}>
+                    <GitHub fontSize='large' sx={{ color: '#fff6f6' }} />
+                  </IconButton>
+                </Stack>
+              </Box>
             )}
           </Box>
+
+          <Box
+            sx={{
+              width: { xs: '100%', lg: '50%' },
+              display: 'flex',
+              alignItems: 'center'
+            }}>
+            <Box
+              component='form'
+              onSubmit={formik.handleSubmit}
+              ref={form}
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: { xs: '', sm: 'center' },
+                gap: 2,
+                maxWidth: '600px',
+                width: '100%',
+                minWidth: { sm: '300px' },
+                m: '0 auto',
+                minHeight: 'max-content',
+                height: '100%'
+              }}>
+              <StyledTextField
+                formik={formik}
+                type='text'
+                name='name'
+                label='Name'
+                variant='outlined'
+                value={formik.values.name}
+                placeholder='Full Name'
+                error={formik.errors.name && formik.touched.name}
+              />
+              <StyledTextField
+                formik={formik}
+                type='email'
+                name='email'
+                label='Email'
+                variant='outlined'
+                value={formik.values.email}
+                placeholder='Email'
+                error={formik.errors.email && formik.touched.email}
+              />
+              <StyledTextField
+                formik={formik}
+                type='text'
+                name='message'
+                label='Message'
+                variant='outlined'
+                value={formik.values.message}
+                placeholder='Message'
+                error={formik.errors.message && formik.touched.message}
+              />
+
+              <Box
+                sx={{
+                  display: 'flex',
+                  height: '100%',
+                  justifyContent: 'flex-end'
+                }}>
+                <Button
+                  onClick={handleClick({
+                    vertical: 'top',
+                    horizontal: 'right'
+                  })}
+                  disableRipple
+                  variant='outlined'
+                  type='submit'
+                  disabled={formik.isSubmitting}
+                  size={mobile ? 'small' : 'large'}
+                  sx={{
+                    width: 'max-content',
+                    alignSelf: 'flex-end',
+                    borderColor: 'light',
+                    lineHeight: { xs: '16px', sm: '28px' },
+                    letterSpacing: { xs: 1, sm: 1.2 },
+                    p: 1,
+                    color: 'light',
+                    '&:hover': {
+                      borderColor: (theme) => theme.palette.main,
+                      color: (theme) => theme.palette.main
+                    },
+                    '&:disabled': {
+                      backgroundColor: 'mainDark2',
+                      color: 'mainDark1'
+                    }
+                  }}>
+                  Send Message
+                </Button>
+              </Box>
+              {formSubmitted && (
+                <Snackbar
+                  anchorOrigin={{ vertical, horizontal }}
+                  open={open}
+                  onClose={handleClose}
+                  message='Message sent successfully!'
+                  key={vertical + horizontal}
+                  autoHideDuration={5000}
+                />
+              )}
+            </Box>
+          </Box>
         </Box>
+
+        {smallerScreen && (
+          <Box sx={{ display: 'flex', flex: 1, alignItems: 'flex-end' }}>
+            <Footer />
+          </Box>
+        )}
       </Box>
     </Box>
   );

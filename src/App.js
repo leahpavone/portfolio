@@ -7,7 +7,6 @@ import * as Scroll from 'react-scroll';
 import { useEffect, useState } from 'react';
 import { KeyboardArrowDown, KeyboardArrowUp } from '@mui/icons-material';
 import { Element } from 'react-scroll';
-import Footer from './Sections/Footer';
 import './index.css';
 
 function App() {
@@ -71,9 +70,6 @@ function App() {
           </Element>
           <Element name='contact' className='element'>
             <Contact />
-          </Element>
-          <Element name='footer' className='element'>
-            <Footer />
           </Element>
         </Box>
       </Box>
