@@ -14,15 +14,22 @@ const Projects = () => {
         width: '100%',
         height: '100%',
         // p: { xs: '0px', md: '60px' }
-        p: { xs: '0px 0px 60px 0px', sm: '0px 0px 60px 0px', md: '60px' }
-      }}>
+        p: {
+          xs: '0px 0px 60px 0px',
+          sm: '0px 0px 60px 0px',
+          md: '0px 0px 60px 0px',
+          lg: '0px 40px 60px 40px',
+        },
+      }}
+    >
       <Typography
         sx={{
           fontSize: '42px',
           pb: 4,
           color: 'light',
-          textAlign: 'center'
-        }}>
+          textAlign: 'center',
+        }}
+      >
         Projects
       </Typography>
       <Box
@@ -32,8 +39,9 @@ const Projects = () => {
           justifyContent: 'center',
           gap: 4,
           height: '100%',
-          width: '100%'
-        }}>
+          width: '100%',
+        }}
+      >
         {ProjectData.map((project, index) => {
           return <ProjectCard project={project} key={index} />;
         })}

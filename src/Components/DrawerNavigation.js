@@ -6,7 +6,7 @@ import {
   IconButton,
   Drawer,
   Divider,
-  Stack
+  Stack,
 } from '@mui/material';
 import { useState } from 'react';
 import { Link, animateScroll as scroll } from 'react-scroll/modules';
@@ -22,7 +22,7 @@ function DrawerNavigation(props) {
   const [links] = useState([
     { name: 'Projects', slug: 'projects' },
     { name: 'About', slug: 'about' },
-    { name: 'Contact', slug: 'contact' }
+    { name: 'Contact', slug: 'contact' },
   ]);
 
   const handleDrawerToggle = () => {
@@ -41,7 +41,7 @@ function DrawerNavigation(props) {
         height: windowSize.height,
         width: drawerWidth,
         flex: 1,
-        backgroundColor: 'dark',
+        backgroundColor: 'darker',
         color: 'light',
         display: 'flex',
         flexDirection: 'column',
@@ -50,16 +50,18 @@ function DrawerNavigation(props) {
         pt: 4,
         pb: 4,
         pl: { xs: 1, md: 2 },
-        pr: { xs: 1, md: 0 }
-      }}>
+        pr: { xs: 1, md: 0 },
+      }}
+    >
       <Box
         sx={{
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           maxHeight: '120px',
-          maxWidth: '90px'
-        }}>
+          maxWidth: '90px',
+        }}
+      >
         <img
           src={lpWhite}
           alt='lp logo'
@@ -67,7 +69,7 @@ function DrawerNavigation(props) {
           style={{
             height: '100%',
             width: '100%',
-            scrollBehavior: 'smooth'
+            scrollBehavior: 'smooth',
           }}
         />
       </Box>
@@ -83,8 +85,9 @@ function DrawerNavigation(props) {
           justifyContent: 'center',
           alignItems: 'center',
           gap: 8,
-          flex: 1
-        }}>
+          flex: 1,
+        }}
+      >
         {links.map((link, index) => {
           return (
             <Link
@@ -93,12 +96,14 @@ function DrawerNavigation(props) {
               to={link.slug}
               spy={true}
               smooth={true}
-              duration={300}>
+              duration={300}
+            >
               <Box
                 key={index}
                 sx={{
-                  cursor: 'pointer'
-                }}>
+                  cursor: 'pointer',
+                }}
+              >
                 <Typography
                   sx={{
                     fontSize: '18px',
@@ -107,9 +112,10 @@ function DrawerNavigation(props) {
                     MozTransition: 'all ease 0.3s',
                     transition: 'all ease 0.3s',
                     '&:hover': {
-                      scale: '1.05'
-                    }
-                  }}>
+                      scale: '1.05',
+                    },
+                  }}
+                >
                   {link.name}
                 </Typography>
               </Box>
@@ -132,8 +138,9 @@ function DrawerNavigation(props) {
           width: 'max-content',
           m: '0 auto',
           pb: 10,
-          '&:hover': { boxShadow: 'none' }
-        }}>
+          '&:hover': { boxShadow: 'none' },
+        }}
+      >
         <IconButton
           href='https://www.linkedin.com/in/leahpavone/'
           target='_blank'
@@ -144,9 +151,10 @@ function DrawerNavigation(props) {
             '&:hover': {
               transition: 'all 0.3s ease-in-out',
               backgroundColor: 'transparent',
-              transform: 'translateY(-3px)'
-            }
-          }}>
+              transform: 'translateY(-3px)',
+            },
+          }}
+        >
           <LinkedIn fontSize='large' sx={{ color: '#fff6f6' }} />
         </IconButton>
         <IconButton
@@ -159,9 +167,10 @@ function DrawerNavigation(props) {
             '&:hover': {
               transition: 'all 0.3s ease-in-out',
               backgroundColor: 'transparent',
-              transform: 'translateY(-3px)'
-            }
-          }}>
+              transform: 'translateY(-3px)',
+            },
+          }}
+        >
           <GitHub fontSize='large' sx={{ color: '#fff6f6' }} />
         </IconButton>
       </Stack>
@@ -178,7 +187,8 @@ function DrawerNavigation(props) {
         aria-label='open drawer'
         edge='start'
         onClick={handleDrawerToggle}
-        sx={{ ml: 2, mt: 2, display: { md: 'none' }, position: 'absolute' }}>
+        sx={{ ml: 2, mt: 2, display: { md: 'none' }, position: 'absolute' }}
+      >
         <Menu />
       </IconButton>
 
@@ -186,9 +196,10 @@ function DrawerNavigation(props) {
         component='nav'
         sx={{
           width: { sm: '120px' },
-          flexShrink: { sm: 0 }
+          flexShrink: { sm: 0 },
         }}
-        aria-label='navigation links'>
+        aria-label='navigation links'
+      >
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
         <Drawer
           container={container}
@@ -196,16 +207,17 @@ function DrawerNavigation(props) {
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true // Better open performance on mobile.
+            keepMounted: true, // Better open performance on mobile.
           }}
           sx={{
             display: { xs: 'block', md: 'none' },
             '& .MuiDrawer-paper': {
               boxSizing: 'border-box',
               width: drawerWidth,
-              border: 0
-            }
-          }}>
+              border: 0,
+            },
+          }}
+        >
           {drawer}
         </Drawer>
         <Drawer
@@ -215,10 +227,11 @@ function DrawerNavigation(props) {
             '& .MuiDrawer-paper': {
               boxSizing: 'border-box',
               width: drawerWidth,
-              border: 0
-            }
+              border: 0,
+            },
           }}
-          open>
+          open
+        >
           {drawer}
         </Drawer>
       </Box>

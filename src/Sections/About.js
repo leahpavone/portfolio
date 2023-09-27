@@ -10,7 +10,7 @@ import {
   firebaseIcon,
   gcpIcon,
   expressJSIcon,
-  materialUIIcon
+  materialUIIcon,
 } from '../Static/skill-icons';
 
 const About = () => {
@@ -26,7 +26,7 @@ const About = () => {
     { skill: 'ExpressJS', icon: expressJSIcon },
     { skill: 'MaterialUI', icon: materialUIIcon },
     { skill: 'Firebase', icon: firebaseIcon },
-    { skill: 'GCP', icon: gcpIcon }
+    { skill: 'GCP', icon: gcpIcon },
   ];
 
   return (
@@ -34,18 +34,20 @@ const About = () => {
       sx={{
         minHeight: windowSize.height,
         width: '100%',
-        p: { xs: '0px 0px 60px 0px', sm: '20px 0px 60px 0px', md: '60px' },
+        p: { xs: '0px 0px 60px 0px', sm: '20px 0px 60px 0px', md: '0px' },
 
         display: 'flex',
-        flexDirection: 'column'
-      }}>
+        flexDirection: 'column',
+      }}
+    >
       <Typography
         sx={{
           fontSize: '42px',
           pb: 2,
           color: 'light',
-          textAlign: 'center'
-        }}>
+          textAlign: 'center',
+        }}
+      >
         About
       </Typography>
       <Box
@@ -60,16 +62,18 @@ const About = () => {
           gap: 4,
           mt: { xs: '0px', md: '50px' },
           mb: 'auto',
-          flex: 1
-        }}>
+          flex: 1,
+        }}
+      >
         <Box
           sx={{
             // maxWidth: mobile ? '100%' : '50%',
             width: '100%',
             display: 'flex',
             flexDirection: 'column',
-            gap: 2
-          }}>
+            gap: 2,
+          }}
+        >
           <Box
             sx={{
               display: 'flex',
@@ -77,13 +81,15 @@ const About = () => {
               // flexDirection: 'column',
               justifyContent: 'center',
               flex: 1,
-              gap: 2
-            }}>
+              gap: 2,
+            }}
+          >
             <Typography
               sx={{
                 fontSize: '18px',
-                width: { xs: '100%', sm: '50%' }
-              }}>
+                width: { xs: '100%', sm: '50%' },
+              }}
+            >
               Hey there, I'm Leah! I'm a Full Stack Developer with 2 years of
               experience building beautiful and functional web applications.
               Some of my technical skills include proficiency in HTML, CSS,
@@ -95,8 +101,9 @@ const About = () => {
             <Typography
               sx={{
                 fontSize: '18px',
-                width: { xs: '100%', sm: '50%' }
-              }}>
+                width: { xs: '100%', sm: '50%' },
+              }}
+            >
               If you're interested in working with me, feel free to get in
               touch! I'm always open to meeting new people and exploring new
               opportunities.
@@ -109,18 +116,21 @@ const About = () => {
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
-            gap: 6
+            gap: 6,
             // minHeight: '100%'
-          }}>
+          }}
+        >
           <Typography
             sx={{
+              textDecoration: 'underline',
               fontSize: '32px',
               pt: 2,
               alignSelf: 'center',
-              color: (theme) => theme.palette.light
+              color: (theme) => theme.palette.light,
               // textDecoration: 'underline'
-            }}>
-            Skills:
+            }}
+          >
+            Skills
           </Typography>
           <Grid
             container
@@ -131,8 +141,9 @@ const About = () => {
               justifyContent: { xs: 'space-evenly', sm: 'center' },
               columnGap: 1.5,
               rowGap: 1.5,
-              height: '100%'
-            }}>
+              height: '100%',
+            }}
+          >
             {skills.map((skill, index) => (
               <Grid
                 item
@@ -146,8 +157,9 @@ const About = () => {
                   flexDirection: 'column',
                   justifyContent: 'center',
                   alignItems: 'center',
-                  gap: 1
-                }}>
+                  gap: 1,
+                }}
+              >
                 <img
                   src={skill.icon}
                   alt={skill.skill}
@@ -156,8 +168,9 @@ const About = () => {
                 <Typography
                   variant='caption'
                   sx={{
-                    color: 'light'
-                  }}>
+                    color: 'light',
+                  }}
+                >
                   {skill.skill}
                 </Typography>
               </Grid>

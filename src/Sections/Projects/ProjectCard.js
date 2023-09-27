@@ -4,7 +4,7 @@ import {
   CardMedia,
   Paper,
   Typography,
-  useMediaQuery
+  useMediaQuery,
 } from '@mui/material';
 
 const ProjectCard = ({ project }) => {
@@ -13,12 +13,13 @@ const ProjectCard = ({ project }) => {
   return (
     <Paper
       sx={{
-        background: (theme) => theme.palette.mainDark1,
+        background: (theme) => theme.palette.dark,
         borderRadius: '5px',
         p: 4,
         width: '100%',
-        height: '100%'
-      }}>
+        height: '100%',
+      }}
+    >
       <Box
         sx={{
           display: 'flex',
@@ -27,8 +28,9 @@ const ProjectCard = ({ project }) => {
           alignItems: { xs: 'center', lg: 'flex-start' },
           justifyContent: 'center',
           height: '100%',
-          width: '100%'
-        }}>
+          width: '100%',
+        }}
+      >
         <Box
           sx={{
             display: 'flex',
@@ -37,16 +39,18 @@ const ProjectCard = ({ project }) => {
             width: '100%',
             minHeight: '275px',
             flex: 1,
-            gap: 2
-          }}>
+            gap: 2,
+          }}
+        >
           <Typography
             component='h1'
             sx={{
               fontSize: { xs: '26px', sm: '30px' },
               fontWeight: 600,
               letterSpacing: 1,
-              color: (theme) => theme.palette.light
-            }}>
+              color: (theme) => theme.palette.main,
+            }}
+          >
             {project.name}
           </Typography>
 
@@ -57,21 +61,24 @@ const ProjectCard = ({ project }) => {
               display: 'flex',
               alignItems: 'center',
               gap: 2,
-              flexWrap: 'wrap'
-            }}>
+              flexWrap: 'wrap',
+            }}
+          >
             {project.madeWith.map((tool, index) => (
               <Typography
                 key={index}
                 sx={{
-                  backgroundColor: 'mainDark2',
+                  backgroundColor: 'mainDark',
+                  // backgroundColor: 'rgba(0, 0, 0, 0.5)',
                   p: '8px 12px',
                   borderRadius: '5px',
                   textTransform: 'uppercase',
                   fontWeight: 500,
                   fontSize: '14px',
                   letterSpacing: 0.8,
-                  lineHeight: '100%'
-                }}>
+                  lineHeight: '100%',
+                }}
+              >
                 {tool}
               </Typography>
             ))}
@@ -80,8 +87,9 @@ const ProjectCard = ({ project }) => {
           <Box>
             <Typography
               sx={{
-                color: 'light'
-              }}>
+                color: 'main',
+              }}
+            >
               {project.description}
             </Typography>
           </Box>
@@ -92,8 +100,9 @@ const ProjectCard = ({ project }) => {
               display: 'flex',
               gap: 1,
               alignItems: 'flex-end',
-              flex: 1
-            }}>
+              flex: 1,
+            }}
+          >
             {project.liveSite !== '' && (
               <Button
                 variant='outlined'
@@ -101,16 +110,21 @@ const ProjectCard = ({ project }) => {
                 target='_blank'
                 size={mobile ? 'small' : 'large'}
                 sx={{
-                  borderColor: 'light',
                   lineHeight: { xs: '16px', sm: '28px' },
                   letterSpacing: { xs: 1, sm: 1.2 },
                   p: 1,
-                  color: 'light',
+                  color: 'darker',
+                  borderColor: 'main',
+                  backgroundColor: 'main',
                   '&:hover': {
-                    borderColor: (theme) => theme.palette.light,
-                    backgroundColor: (theme) => theme.palette.mainDark2
-                  }
-                }}>
+                    borderColor: (theme) => theme.palette.mainDark,
+                    backgroundColor: (theme) => theme.palette.mainDark,
+                    color: (theme) => theme.palette.main,
+                    // borderColor: (theme) => theme.palette.light,
+                    // backgroundColor: (theme) => theme.palette.darker,
+                  },
+                }}
+              >
                 Live Site
               </Button>
             )}
@@ -121,17 +135,21 @@ const ProjectCard = ({ project }) => {
                 target='_blank'
                 size={mobile ? 'small' : 'large'}
                 sx={{
-                  borderColor: 'light',
                   lineHeight: { xs: '16px', sm: '28px' },
                   letterSpacing: { xs: 1, sm: 1.2 },
                   p: 1,
-                  color: 'light',
-
+                  color: 'darker',
+                  borderColor: 'main',
+                  backgroundColor: 'main',
                   '&:hover': {
-                    borderColor: (theme) => theme.palette.light,
-                    backgroundColor: (theme) => theme.palette.mainDark2
-                  }
-                }}>
+                    borderColor: (theme) => theme.palette.mainDark,
+                    backgroundColor: (theme) => theme.palette.mainDark,
+                    color: (theme) => theme.palette.main,
+                    // borderColor: (theme) => theme.palette.light,
+                    // backgroundColor: (theme) => theme.palette.darker,
+                  },
+                }}
+              >
                 Github Repo
               </Button>
             )}
@@ -141,8 +159,9 @@ const ProjectCard = ({ project }) => {
         <Box
           sx={{
             maxHeight: '100%',
-            maxWidth: '500px'
-          }}>
+            maxWidth: '500px',
+          }}
+        >
           <CardMedia
             component='video'
             autoPlay={true}
@@ -153,7 +172,7 @@ const ProjectCard = ({ project }) => {
             sx={{
               height: '100%',
               width: '100%',
-              borderRadius: '5px'
+              borderRadius: '5px',
             }}
           />
         </Box>

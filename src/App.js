@@ -42,11 +42,12 @@ function App() {
           minHeight: windowSize.height,
           width: '100%',
           maxWidth: '100vw',
-          backgroundColor: 'dark',
-          color: 'main',
+          backgroundColor: 'darker',
+          color: 'light',
           overflow: 'hidden',
-          fontFamily: `'Montserrat', sans-serif`
-        }}>
+          fontFamily: `'Montserrat', sans-serif`,
+        }}
+      >
         <DrawerNavigation loading={loading} />
 
         <Box
@@ -56,9 +57,10 @@ function App() {
             p: {
               xs: '40px',
               md: '40px 40px 40px 140px',
-              xl: '60px 60px 60px 140px'
-            }
-          }}>
+              xl: '60px 60px 60px 140px',
+            },
+          }}
+        >
           <Element name='main' className='element'>
             <Main />
           </Element>
@@ -90,8 +92,9 @@ function App() {
             justifyContent: 'center',
             alignItems: 'center',
             boxShadow:
-              '0px 6px 6px -3px rgb(0 0 0 / 20%), 0px 10px 14px 1px rgb(0 0 0 / 14%), 0px 4px 18px 3px rgb(0 0 0 / 12%)'
-          }}>
+              '0px 6px 6px -3px rgb(0 0 0 / 20%), 0px 10px 14px 1px rgb(0 0 0 / 14%), 0px 4px 18px 3px rgb(0 0 0 / 12%)',
+          }}
+        >
           <KeyboardArrowUp fontSize='large' sx={{ color: '#fff6f6' }} />
         </Box>
       )}
@@ -101,21 +104,23 @@ function App() {
           sx={{
             cursor: 'pointer',
             position: 'absolute',
-            bottom: 10,
+            bottom: 20,
             left: '50%',
             transform: {
               xs: 'translateX(-50%)',
               md: 'translateX(calc(-50% + 50px))',
-              lg: 'translateX(-50%)'
+              lg: 'translateX(-50% - 60px)',
             },
             height: '50px',
             width: '50px',
             backgroundColor: 'transparent',
             borderRadius: '50%',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center'
-          }}>
+            // display: 'flex',
+            // justifyContent: 'center',
+            // alignItems: 'center',
+            // ml: '60px',
+          }}
+        >
           <KeyboardArrowDown
             fontSize='large'
             sx={{ color: '#fff6f6', animation: 'jumpInfinite 1.5s infinite' }}

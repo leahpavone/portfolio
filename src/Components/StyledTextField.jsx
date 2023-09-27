@@ -7,8 +7,9 @@ export const StyledTextField = ({ formik, name, type, label, placeholder }) => {
       <Typography
         color={formik.touched[name] && formik.errors[name] ? 'error' : 'main'}
         sx={{
-          pb: 0.2
-        }}>
+          pb: 0.2,
+        }}
+      >
         {label}
       </Typography>
 
@@ -29,55 +30,55 @@ export const StyledTextField = ({ formik, name, type, label, placeholder }) => {
           '& .MuiOutlinedInput-root': {
             input: {
               color: 'light',
-              background: (theme) => theme.palette.mainDark1,
+              background: (theme) => theme.palette.mainDark,
               borderRadius: '5px',
               backdropFilter: 'blur(5px)',
               WebkitBackdropFilter: 'blur(5px)',
               '&:-webkit-autofill': {
                 WebkitBoxShadow: '0 0 0 1000px #2c3a3b inset',
                 WebkitTextFillColor: (theme) => theme.palette.light,
-                caretColor: (theme) => theme.palette.light
-              }
+                caretColor: (theme) => theme.palette.light,
+              },
             },
             '& fieldset': {},
             '&:hover:not(.Mui-error) fieldset ': {
               borderColor: 'main',
-              borderWidth: '2px'
+              borderWidth: '2px',
             },
             '&.Mui-focused:not(.Mui-error) fieldset': {
               borderColor: 'main',
-              borderWidth: '2px'
+              borderWidth: '2px',
             },
             '&.Mui-error fieldset': {
               borderColor: 'error',
-              borderWidth: '2px'
-            }
+              borderWidth: '2px',
+            },
           },
           '& .MuiInputBase-multiline': {
             // display: 'flex',
             // minHeight: '200px',
             flex: 1,
-            background: (theme) => theme.palette.mainDark1,
+            background: (theme) => theme.palette.mainDark,
             textArea: {
               color: (theme) => theme.palette.light,
               borderRadius: '5px',
               '& fieldset': {
-                color: 'light'
-              }
+                color: 'light',
+              },
             },
             '&:hover:not(.Mui-error) fieldset ': {
               borderColor: 'main',
-              borderWidth: '2px'
+              borderWidth: '2px',
             },
             '&.Mui-focused:not(.Mui-error) fieldset': {
               borderColor: 'main',
-              borderWidth: '2px'
+              borderWidth: '2px',
             },
             '&.Mui-error fieldset': {
               borderColor: 'error',
-              borderWidth: '2px'
-            }
-          }
+              borderWidth: '2px',
+            },
+          },
         }}
       />
 
@@ -90,8 +91,9 @@ export const StyledTextField = ({ formik, name, type, label, placeholder }) => {
             gap: '5px',
             height: 'min-content',
             color: 'error.main',
-            pt: 0.4
-          }}>
+            pt: 0.4,
+          }}
+        >
           <ErrorOutline sx={{ height: '16px', width: '16px' }} />
           {formik.touched[name] && formik.errors[name]}
         </Typography>
@@ -128,7 +130,7 @@ export const StyledTextField = ({ formik, name, type, label, placeholder }) => {
 //         error={Boolean(formik.touched[name] && formik.errors[name])}
 //         sx={{
 //           '& .MuiInputBase-multiline': {
-//             background: (theme) => theme.palette.mainDark1,
+//             background: (theme) => theme.palette.light,
 //             textArea: {
 //               color: (theme) => theme.palette.light,
 //               borderRadius: '5px',
