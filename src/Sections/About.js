@@ -34,7 +34,7 @@ const About = () => {
       sx={{
         minHeight: windowSize.height,
         width: '100%',
-        p: { xs: '0px 0px 60px 0px', sm: '20px 0px 60px 0px', md: '0px' },
+        p: { xs: '0px 0px 60px 0px', sm: '20px 0px 60px 0px', md: '0px 60px' },
 
         display: 'flex',
         flexDirection: 'column',
@@ -54,13 +54,13 @@ const About = () => {
         sx={{
           display: 'flex',
           flexDirection: 'column',
-          // justifyContent: { xs: 'space-between', xl: 'space-evenly' },
+          justifyContent: { xs: 'space-evenly', xl: 'space-evenly' },
           // alignItems: mobile && 'center',
           // flexDirection: mobile ? 'column' : 'row',
           width: '100%',
           height: '100%',
           gap: 4,
-          mt: { xs: '0px', md: '50px' },
+          mt: { xs: '0px', md: '0px' },
           mb: 'auto',
           flex: 1,
         }}
@@ -122,8 +122,8 @@ const About = () => {
         >
           <Typography
             sx={{
-              textDecoration: 'underline',
-              fontSize: '32px',
+              textTransform: 'uppercase',
+              fontSize: '28px',
               pt: 2,
               alignSelf: 'center',
               color: (theme) => theme.palette.light,

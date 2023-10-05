@@ -48,7 +48,7 @@ const ProjectCard = ({ project }) => {
               fontSize: { xs: '26px', sm: '30px' },
               fontWeight: 600,
               letterSpacing: 1,
-              color: (theme) => theme.palette.main,
+              color: (theme) => theme.palette.light,
             }}
           >
             {project.name}
@@ -87,7 +87,7 @@ const ProjectCard = ({ project }) => {
           <Box>
             <Typography
               sx={{
-                color: 'main',
+                color: 'light',
               }}
             >
               {project.description}

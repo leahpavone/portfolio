@@ -112,13 +112,12 @@ function App() {
               lg: 'translateX(-50% - 60px)',
             },
             height: '50px',
-            width: '50px',
+            width: '100%',
             backgroundColor: 'transparent',
             borderRadius: '50%',
-            // display: 'flex',
-            // justifyContent: 'center',
-            // alignItems: 'center',
-            // ml: '60px',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
           }}
         >
           <KeyboardArrowDown
