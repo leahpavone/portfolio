@@ -105,6 +105,16 @@ const About = () => {
               applications. Some of my technical skills include proficiency in
               HTML, CSS, JavaScript, React, Firebase, and Node.js.
             </Typography>
+            <Typography
+              sx={{
+                fontSize: '18px',
+                // width: { xs: '100%', md: '50%' },
+                width: '100%',
+              }}
+            >
+              I am the <b>Co-Founder</b> of Breezy Innovations. A company where
+              we build
+            </Typography>
 
             <Typography
               sx={{
