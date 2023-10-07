@@ -27,7 +27,7 @@ const About = () => {
     { skill: 'ExpressJS', icon: expressJSIcon },
     { skill: 'Firebase', icon: firebaseIcon },
     { skill: 'GCP', icon: gcpIcon },
-    { skill: 'GitHub', icon: githubIcon },
+    // { skill: 'GitHub', icon: githubIcon },
     // { skill: 'MaterialUI', icon: materialUIIcon },
   ];
 
@@ -56,15 +56,15 @@ const About = () => {
       <Box
         sx={{
           display: 'flex',
-          flexDirection: 'column',
-          justifyContent: { xs: 'space-evenly', xl: 'space-evenly' },
+          flexDirection: { xs: 'column', md: 'row' },
+          // justifyContent: { xs: 'space-evenly', xl: 'space-evenly' },
           // alignItems: mobile && 'center',
           // flexDirection: mobile ? 'column' : 'row',
           width: '100%',
           height: '100%',
-          gap: 4,
+          gap: 6,
           mt: { xs: '0px', md: '0px' },
-          mb: 'auto',
+          // mb: 'auto',
           flex: 1,
         }}
       >
@@ -72,7 +72,10 @@ const About = () => {
           sx={{
             // maxWidth: mobile ? '100%' : '50%',
             width: '100%',
+            // height: '100%',
+            // flex: '1 1 auto',
             display: 'flex',
+            justifyContent: 'center',
             flexDirection: 'column',
             gap: 2,
           }}
@@ -85,30 +88,34 @@ const About = () => {
               justifyContent: 'center',
               // flex: 1,
               gap: 2,
+              backgroundColor: 'mainDark',
+              p: 4,
+              borderRadius: '5px',
             }}
           >
             <Typography
               sx={{
                 fontSize: '18px',
-                width: { xs: '100%', md: '50%' },
+                // width: { xs: '100%', md: '50%' },
+                width: '100%',
               }}
             >
-              Hey there, I'm Leah! I'm a Full Stack Developer with 2 years of
-              experience building beautiful and functional web applications.
-              Some of my technical skills include proficiency in HTML, CSS,
-              JavaScript, React, Firebase, and Node.js. I truly enjoy learning
-              and experimenting with new technologies to improve my skills and
-              stay up-to-date with the latest industry trends.
+              Hey there, I'm Leah! I'm a <b>Full Stack Developer</b> with 2
+              years of experience building beautiful and functional web
+              applications. Some of my technical skills include proficiency in
+              HTML, CSS, JavaScript, React, Firebase, and Node.js.
             </Typography>
 
             <Typography
               sx={{
                 fontSize: '18px',
-                width: { xs: '100%', md: '50%' },
+                // p: 2,
+                // width: { xs: '100%', md: '50%' },
+                width: '100%',
               }}
             >
-              If you're interested in working with me, feel free to get in
-              touch! I'm always open to meeting new people and exploring new
+              If you're interested in <b>working with me</b>, feel free to get
+              in touch! I'm always open to meeting new people and exploring new
               opportunities.
             </Typography>
           </Box>
@@ -120,6 +127,7 @@ const About = () => {
             flexDirection: 'column',
             justifyContent: 'center',
             gap: 6,
+            width: '100%',
             // minHeight: '100%'
           }}
         >
@@ -144,7 +152,7 @@ const About = () => {
               justifyContent: { xs: 'space-evenly', sm: 'center' },
               columnGap: 1.5,
               rowGap: 1.5,
-              height: '100%',
+              height: '50%',
             }}
           >
             {skills.map((skill, index) => (
@@ -152,8 +160,8 @@ const About = () => {
                 item
                 xs={4}
                 sm={3}
-                md={2}
-                lg={2}
+                md={3}
+                lg={3}
                 key={index}
                 sx={{
                   display: 'flex',
