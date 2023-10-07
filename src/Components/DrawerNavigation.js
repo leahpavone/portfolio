@@ -187,7 +187,13 @@ function DrawerNavigation(props) {
         aria-label='open drawer'
         edge='start'
         onClick={handleDrawerToggle}
-        sx={{ ml: 2, mt: 2, display: { md: 'none' }, position: 'absolute' }}
+        sx={{
+          ml: 2,
+          mt: 2,
+          display: { md: 'none' },
+          position: 'fixed',
+          backgroundColor: 'mainDark',
+        }}
       >
         <Menu />
       </IconButton>

@@ -10,7 +10,8 @@ import {
   firebaseIcon,
   gcpIcon,
   expressJSIcon,
-  materialUIIcon,
+  // materialUIIcon,
+  viteIcon,
 } from '../Static/skill-icons';
 
 const About = () => {
@@ -21,12 +22,13 @@ const About = () => {
     { skill: 'CSS', icon: cssIcon },
     { skill: 'HTML', icon: htmlIcon },
     { skill: 'React', icon: reactIcon },
-    { skill: 'GitHub', icon: githubIcon },
+    { skill: 'Vite', icon: viteIcon },
     { skill: 'NodeJS', icon: nodeJSIcon },
     { skill: 'ExpressJS', icon: expressJSIcon },
-    { skill: 'MaterialUI', icon: materialUIIcon },
     { skill: 'Firebase', icon: firebaseIcon },
     { skill: 'GCP', icon: gcpIcon },
+    { skill: 'GitHub', icon: githubIcon },
+    // { skill: 'MaterialUI', icon: materialUIIcon },
   ];
 
   return (
@@ -50,6 +52,7 @@ const About = () => {
       >
         About
       </Typography>
+
       <Box
         sx={{
           display: 'flex',
@@ -77,17 +80,17 @@ const About = () => {
           <Box
             sx={{
               display: 'flex',
-              flexDirection: { xs: 'column', sm: 'row' },
+              flexDirection: { xs: 'row', sm: 'column' },
               // flexDirection: 'column',
               justifyContent: 'center',
-              flex: 1,
+              // flex: 1,
               gap: 2,
             }}
           >
             <Typography
               sx={{
                 fontSize: '18px',
-                width: { xs: '100%', sm: '50%' },
+                width: { xs: '100%', md: '50%' },
               }}
             >
               Hey there, I'm Leah! I'm a Full Stack Developer with 2 years of
@@ -101,7 +104,7 @@ const About = () => {
             <Typography
               sx={{
                 fontSize: '18px',
-                width: { xs: '100%', sm: '50%' },
+                width: { xs: '100%', md: '50%' },
               }}
             >
               If you're interested in working with me, feel free to get in

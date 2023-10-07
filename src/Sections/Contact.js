@@ -430,20 +430,21 @@ const Contact = () => {
             </Box>
           </Box>
         </Box>
+      </Box>
 
-        {smallerScreen && (
-          <Box
-            sx={{
-              // height: '100%',
-              display: 'flex',
-              flex: 1,
-              alignItems: 'flex-end',
-            }}
-          >
-            <Footer />
-          </Box>
-        )}
-        {/* <Box sx={{ bgcolor: 'lightgray', display: 'flex' }}>
+      {smallerScreen && (
+        <Box
+          sx={{
+            // height: '100%',
+            display: 'flex',
+            // flex: 1,
+            alignItems: 'flex-end',
+          }}
+        >
+          <Footer />
+        </Box>
+      )}
+      {/* <Box sx={{ bgcolor: 'lightgray', display: 'flex' }}>
           <Email
             fontSize='large'
             sx={{ color: (theme) => theme.palette.main }}
@@ -465,7 +466,6 @@ const Contact = () => {
           />{' '}
           <Typography>light</Typography>
         </Box> */}
-      </Box>
     </Box>
   );
 };

@@ -8,6 +8,7 @@ import firebaseIcon from './firebase-icon.svg';
 import gcpIcon from './gcp-icon.svg';
 import expressJSIcon from './express-js-icon.svg';
 import materialUIIcon from './material-ui.svg';
+import viteIcon from './vitejs-icon.svg';
 
 export {
   cssIcon,
@@ -19,5 +20,6 @@ export {
   firebaseIcon,
   gcpIcon,
   expressJSIcon,
-  materialUIIcon
+  materialUIIcon,
+  viteIcon,
 };
